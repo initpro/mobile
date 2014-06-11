@@ -47,7 +47,9 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
+        //Ext.Viewport.add(Ext.create('InitProMobile.view.Main'));
         Ext.Viewport.add(Ext.create('InitProMobile.view.Wellcome'));
+
     },
 
     onUpdated: function() {
