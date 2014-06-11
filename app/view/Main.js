@@ -11,13 +11,25 @@ Ext.define('InitProMobile.view.Main', {
         items: [
             {
                 xtype: 'list',
-                title: 'Поиск',
+                title: 'Избранное',
                 //fullscreen: false,
-                itemTpl: '{tenderid}',
+                itemTpl: '<span class="tenderRow">' + 
+                            '<div class="name">{name:ellipsis(35, true)}</div>' + 
+                            '<div class="price">{price} руб.</div>' + 
+                            '<div class="finishDocDate">{finishdocdate}</div>' + 
+                         '</span>',
+
+                /*listeners: {
+                    select: function(list, record) {
+                        console.log(record);
+                    }
+                },
+                */
+
+
                 store: Ext.create('Ext.data.Store', {
-                    remoteFilter: true,
                     fields: [
-                        'tenderid', 'name'
+                        'Id', 'name', 'price', 'finishdocdate'
                     ],
 
                     proxy: {                        
@@ -32,7 +44,20 @@ Ext.define('InitProMobile.view.Main', {
                             read: '/api/tender/getHash'
                         },
 
-                        type: "REST",
+                        type: "ajax",
+                        
+                        writer: {
+                            encodeRequest: true,
+                            type: 'json'
+                        },
+                        extraParams: {
+                            filterId: 0,
+                            page: 1,
+                            itemsOnPage: 100,
+                            filters: {
+                                favorite: true
+                            }
+                        },
 
                         reader: {
                             type: "json",
@@ -44,46 +69,5 @@ Ext.define('InitProMobile.view.Main', {
             }
 
         ]
-    }
-});
-
-Ext.define('MyApp.proxy.FileContent', {
-    extend: 'Ext.data.proxy.Proxy',
-    alias: 'proxy.FileContent',
-
-    create: function (operation, callback, scope) {
-             //Here goes your create logic
-        },
-        read: function (operation, callback, scope) {
-            Ext.Ajax.request({
-                url: apiUrl + 'Files/GetFileInfo',
-                method: "POST",
-                defaultHeaders:{
-                    'Content-Type': 'application/json; charset=utf-8',
-                },
-                jsonData: '{"file": "myfile"}',
-                success: function(response){
-                    var json = JSON.parse(response.responseText);
-                },
-                failure: function(){                 
-                    alert("fail");
-                }
-            });  
-        },
-        update: function (operation, callback, scope) {
-             //Here goes your update logic
-        },
-        destroy: function (operation, callback, scope) {
-             //Here goes your delete logic
-        }
-});
-
-Ext.define("MyApp.store.FileContent", {
-    extend: "Ext.data.Store",
-    model:'MyApp.model.FileContent',
-    autoLoad: true,
-    requires: ['MyApp.proxy.FileContent'],
-    proxy: {
-        type: 'FileContent'
     }
 });

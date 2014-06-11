@@ -14,12 +14,16 @@ Ext.application({
     name: 'InitProMobile',
 
     requires: [
-        'Ext.MessageBox',
-        'Ext.List'
+        'Ext.MessageBox'
+    ],
+
+    controllers: [
+        'InitProMobile.controller.MainController'
     ],
 
     views: [
-        'Main'
+        'Main',
+        'Card'
     ],
 
     icon: {

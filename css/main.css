@@ -1,0 +1,11 @@
+.tenderRow .name {
+	color: black;
+}
+
+.tenderRow .price {
+	color: green;
+}
+
+.tenderRow .finishDocDate {
+	color: blue;
+}
