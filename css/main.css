@@ -81,3 +81,30 @@
 	/*list-style-type: decimal;
 	margin-left: 10px;*/
 }
+
+.wellcome {
+	padding: 30px;
+}
+
+.wellcome .image {
+	text-align:center;
+	margin-bottom:20px;
+}
+
+.wellcome .title {
+	text-align:justify;
+}
+
+.wellcome .table_1 {
+	margin-top:20px;
+	text-align:center;
+	border: solid rgba(0,0,0, 0.5) 1px;
+	border-collapse: collapse;
+}
+
+.wellcome .table_1 td {
+	border: solid rgba(0,0,0, 0.2) 1px;
+}
+.wellcome .table_1 td {
+	padding: 10px 0px
+}
