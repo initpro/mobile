@@ -1,3 +1,5 @@
+@import "ms.css";
+
 .tenderRow .name {
 	color: black;
 }
@@ -9,3 +11,4 @@
 .tenderRow .finishDocDate {
 	color: blue;
 }
+
