@@ -288,6 +288,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.data.writer.Json": [
     "Ext.data.JsonWriter"
   ],
+  "Ext.data.writer.UrlEncode": [
+    "Ext.data.JsonWriter"
+  ],
   "Ext.data.writer.Writer": [
     "Ext.data.DataWriter",
     "Ext.data.Writer"
@@ -772,7 +775,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "InitProMobile.view.Main": []
+  "InitProMobile.controller.MainController": [],
+  "InitProMobile.view.Card": [],
+  "InitProMobile.view.Main": [],
+  "InitProMobile.view.Wellcome": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1130,6 +1136,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.data.writer.Json": [
     "writer.json"
+  ],
+  "Ext.data.writer.UrlEncode": [
+    "writer.urlencode"
   ],
   "Ext.data.writer.Writer": [
     "writer.base"
@@ -1716,7 +1725,14 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "InitProMobile.controller.MainController": [],
+  "InitProMobile.view.Card": [
+    "widget.card"
+  ],
   "InitProMobile.view.Main": [
+    "widget.main"
+  ],
+  "InitProMobile.view.Wellcome": [
     "widget.main"
   ]
 });

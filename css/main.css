@@ -1,3 +1,17 @@
+.tenderRow .name {
+	color: black;
+}
+
+.tenderRow .price {
+	color: green;
+}
+
+.tenderRow .finishDocDate {
+	color: blue;
+}
+
+
+
 .tenderCard {
 	background-color: #D8ECFF;
 	position: absolute;
@@ -63,7 +77,6 @@
 .tenderCard .lots tr:nth-child(2n+1) {
 	background-color: #EEEEE0;
 }
-
 .tenderCard .lot_item {
 	/*list-style-type: decimal;
 	margin-left: 10px;*/
