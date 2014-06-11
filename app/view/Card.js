@@ -1,6 +1,6 @@
 Ext.define('InitProMobile.view.Card', {
     extend: 'Ext.tab.Panel',
-    xtype: 'main',
+    xtype: 'card',
     requires: [
         'Ext.TitleBar',
         'Ext.DataView'
@@ -13,12 +13,16 @@ Ext.define('InitProMobile.view.Card', {
                 xtype: 'dataview',
                 title: 'Карточка тендера',
                 store: {
-                    autoLoad: true,
                     fields: ['name', 'price', 'regionnames', 'subcategory', 'documents', 'lots'], 
 
                     proxy: {
                         type: 'ajax',
-                        url: '/api/tender/getTenderInfo?tenderId=8860296',
+                        api: {
+                            read: '/api/tender/getTenderInfo'
+                        },
+                        actionMethods: {
+                            create: "GET", read: "GET", update: "GET", destroy: "GET"
+                        },
                         reader: {
                             type: 'json'
                         }

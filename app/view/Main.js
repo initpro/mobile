@@ -11,17 +11,25 @@ Ext.define('InitProMobile.view.Main', {
         items: [
             {
                 xtype: 'list',
-                title: 'Поиск',
+                title: 'Избранное',
                 //fullscreen: false,
                 itemTpl: '<span class="tenderRow">' + 
                             '<div class="name">{name:ellipsis(35, true)}</div>' + 
-                            '<div class="price">{price}</div>' + 
-                            '<div class="finishDocDate">{finishDocDate}</div>' + 
+                            '<div class="price">{price} руб.</div>' + 
+                            '<div class="finishDocDate">{finishdocdate}</div>' + 
                          '</span>',
+
+                /*listeners: {
+                    select: function(list, record) {
+                        console.log(record);
+                    }
+                },
+                */
+
+
                 store: Ext.create('Ext.data.Store', {
-                    remoteFilter: true,
                     fields: [
-                        'tenderid', 'name'
+                        'Id', 'name', 'price', 'finishdocdate'
                     ],
 
                     proxy: {                        
@@ -43,13 +51,14 @@ Ext.define('InitProMobile.view.Main', {
                             type: 'json'
                         },
                         extraParams: {
-                            "filterId":0,
-                            "page":1,
-                            "itemsOnPage":100,
-                            "filters":{
-                                "favorite":true
+                            filterId: 0,
+                            page: 1,
+                            itemsOnPage: 100,
+                            filters: {
+                                favorite: true
                             }
                         },
+
                         reader: {
                             type: "json",
                             rootProperty: "tenders"

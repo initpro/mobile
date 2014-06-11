@@ -14,8 +14,11 @@ Ext.application({
     name: 'InitProMobile',
 
     requires: [
-        'Ext.MessageBox',
-        'Ext.List'
+        'Ext.MessageBox'
+    ],
+
+    controllers: [
+        'InitProMobile.controller.MainController'
     ],
 
     views: [
@@ -47,8 +50,8 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        //Ext.Viewport.add(Ext.create('InitProMobile.view.Main'));
-        Ext.Viewport.add(Ext.create('InitProMobile.view.Wellcome'));
+        Ext.Viewport.add(Ext.create('InitProMobile.view.Main'));
+        //Ext.Viewport.add(Ext.create('InitProMobile.view.Wellcome'));
 
     },
 
