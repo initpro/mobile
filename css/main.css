@@ -9,3 +9,74 @@
 .tenderRow .finishDocDate {
 	color: blue;
 }
+
+.tenderCard {
+	background-color: #D8ECFF;
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.tenderCard .block {
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid #DCDDE8;
+	background-color: white;
+}
+
+.tenderCard .name {
+	color: black;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.tenderCard .region {
+	color: green;
+	margin-bottom: 10px;
+}
+
+.tenderCard .price {
+	color: green;
+}
+
+.tenderCard .region .region_small {
+	font-size: 13px;
+	color: #8B8989;
+}
+
+.tenderCard .documents {
+	margin-bottom: 10px;
+}
+
+.tenderCard .documents .doc_title, .tenderCard .lots .lot_title {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.tenderCard .lots {
+	max-width: 500px;
+}
+
+.tenderCard .lots .lot_item .price {
+	font-size: 17px;
+}
+
+.tenderCard .lots .lot_table {
+	width: 100%;
+	margin-top: 6px;
+}
+
+.tenderCard .lots .lot_table .lot_table_td {
+	padding: 2px;
+}
+
+.tenderCard .lots tr:nth-child(2n+1) {
+	background-color: #EEEEE0;
+}
+
+.tenderCard .lot_item {
+	/*list-style-type: decimal;
+	margin-left: 10px;*/
+}
