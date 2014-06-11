@@ -1,15 +1,3 @@
-.tenderRow .name {
-	color: black;
-}
-
-.tenderRow .price {
-	color: green;
-}
-
-.tenderRow .finishDocDate {
-	color: blue;
-}
-
 .tenderCard {
 	background-color: #D8ECFF;
 	position: absolute;

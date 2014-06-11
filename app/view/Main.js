@@ -12,26 +12,51 @@ Ext.define('InitProMobile.view.Main', {
             {
                 xtype: 'list',
                 title: 'Поиск',
-                itemTpl: '<span class="tenderRow"> <div class="name">{name}</div> <div class="price">{price}</div> <div class="finishDocDate">{finishDocDate}</div> </span>',
-                data: [
-                    {
-                        name: 'Тендер 1',
-                        price: '1231.11 руб.',
-                        finishDocDate: '12 июля 2014'
-                    }, {
-                        name: 'Тендер 2',
-                        price: '1231.11 руб.',
-                        finishDocDate: '12 июля 2014'
-                    }, {
-                        name: 'Тендер 3',
-                        price: '1231.11 руб.',
-                        finishDocDate: '12 июля 2014'
-                    }, {
-                        name: 'Тендер 4',
-                        price: '1231.11 руб.',
-                        finishDocDate: '12 июля 2014'
-                    }
-                ]
+                //fullscreen: false,
+                itemTpl: '<span class="tenderRow">' + 
+                            '<div class="name">{name:ellipsis(35, true)}</div>' + 
+                            '<div class="price">{price}</div>' + 
+                            '<div class="finishDocDate">{finishDocDate}</div>' + 
+                         '</span>',
+                store: Ext.create('Ext.data.Store', {
+                    remoteFilter: true,
+                    fields: [
+                        'tenderid', 'name'
+                    ],
+
+                    proxy: {                        
+                        headers: {
+                            'Content-Type': 'application/json;charset=utf-8'
+                        },
+
+                        actionMethods: {
+                            read : 'POST'
+                        },
+                        api: {
+                            read: '/api/tender/getHash'
+                        },
+
+                        type: "ajax",
+                        
+                        writer: {
+                            encodeRequest: true,
+                            type: 'json'
+                        },
+                        extraParams: {
+                            "filterId":0,
+                            "page":1,
+                            "itemsOnPage":100,
+                            "filters":{
+                                "favorite":true
+                            }
+                        },
+                        reader: {
+                            type: "json",
+                            rootProperty: "tenders"
+                        }
+                    },
+                    autoLoad: true
+                })
             }
 
         ]
