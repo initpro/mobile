@@ -772,7 +772,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "InitProMobile.view.Main": []
+  "InitProMobile.view.Card": [],
+  "InitProMobile.view.Main": [],
+  "InitProMobile.view.Wellcome": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1716,7 +1718,13 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "InitProMobile.view.Card": [
+    "widget.main"
+  ],
   "InitProMobile.view.Main": [
+    "widget.main"
+  ],
+  "InitProMobile.view.Wellcome": [
     "widget.main"
   ]
 });

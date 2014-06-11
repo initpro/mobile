@@ -48,7 +48,7 @@ Ext.application({
 
         // Initialize the main view
         //Ext.Viewport.add(Ext.create('InitProMobile.view.Main'));
-        Ext.Viewport.add(Ext.create('InitProMobile.view.Wellcome'));
+        Ext.Viewport.add(Ext.create('InitProMobile.view.Main'));
 
     },
 
