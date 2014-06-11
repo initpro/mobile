@@ -5,12 +5,33 @@ Ext.define('InitProMobile.view.Card', {
         'Ext.TitleBar',
         'Ext.DataView'
     ],
+
+
+
     config: {
         tabBarPosition: 'top',
+
         fullscreen: true,
         items: [
             {
                 xtype: 'dataview',
+
+                scrollable: {
+                    direction: 'horizontal',
+                    directionLock: true
+                },
+
+                listeners: {
+
+                    itemtouchend: function() {
+                         
+                        var mainItem = Ext.Viewport.getItems().items[0];
+                        Ext.Viewport.setActiveItem(mainItem);
+
+                    }
+
+                },
+
                 title: 'Карточка тендера',
                 store: {
                     fields: ['name', 'price', 'regionnames', 'subcategory', 'documents', 'lots'], 
